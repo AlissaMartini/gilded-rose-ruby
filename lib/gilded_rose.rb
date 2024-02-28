@@ -6,6 +6,18 @@ class GildedRose
     @days_remaining = days_remaining
     @quality = quality
   end
+  def nor_item_tick
+      @item = Normal.new(quality, days_remaining)
+      item.tick
+    end
+class Normal 
+  attr_reader :name, :days_remaining
+
+  def initialize(name:, days_remaining:)
+    @days_remaining = days_remaining
+    @quality = quality
+  end
+
   def tick
     case name
     when "normal"
