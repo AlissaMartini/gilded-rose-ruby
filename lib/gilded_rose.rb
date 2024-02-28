@@ -44,10 +44,10 @@ module GildedRose
   
   DEFAULT_CLASS = Item
   SPECIALIZED_CLASSES = { 
-    'normal'                                        => Normal,
+    'normal'                                        => Normal Item,
     'Aged Brie'                                     => Brie,
     'Backstage passes to a TAFKAL80ETC concert'     => Backstage}
-  def self.new(name,quality,days_remaining)
+  def self.new(name:,quality:,days_remaining:)
     (SPECIALIZED_CLASSES[name] || DEFAULT_CLASS).new(quality, days_remaining)
   end
 end
